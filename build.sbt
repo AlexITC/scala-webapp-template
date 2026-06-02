@@ -10,7 +10,7 @@ ThisBuild / dependencyOverrides ++= Seq(
   "org.apache.pekko" %% "pekko-actor-typed" % pekkoVersion,
   "org.apache.pekko" %% "pekko-stream" % pekkoVersion,
   "org.apache.pekko" %% "pekko-slf4j" % pekkoVersion,
-  "org.apache.pekko" %% "pekko-serialization-jackson" % pekkoVersion,
+  "org.apache.pekko" %% "pekko-serialization-jackson" % pekkoVersion
 )
 
 val playJson = "3.0.6"
@@ -409,7 +409,15 @@ lazy val web = (project in file("web"))
     stUseScalaJsDom := true,
     Compile / stMinimize := Selection.All,
     // material-ui is provided by a pre-packaged library
-    stIgnore ++= List("@mui/material", "@mui/icons-material", "@mui/joy", "react-router", "react-router-dom", "node", "undici-types"),
+    stIgnore ++= List(
+      "@mui/material",
+      "@mui/icons-material",
+      "@mui/joy",
+      "react-router",
+      "react-router-dom",
+      "node",
+      "undici-types"
+    ),
     Compile / npmDependencies ++= Seq(
       "@mui/material" -> "5.11.16",
       "@mui/icons-material" -> "5.11.16",
