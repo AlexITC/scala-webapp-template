@@ -46,7 +46,9 @@ Never seed test data with raw SQL; always go through `RepositoryUtils` factory m
 
 **RULE-TE-003 — Controller tests: Guice overrides for external deps**
 
-Controller tests run the full Play application with real database but mock external boundaries (email, captcha, clock, token generator):
+Mocks are avoided everywhere possible. The one exception is controller tests: each spec file spins up a single Play application shared across all tests in that file. Because the app is shared, Mockito mocks are the only practical way to change behavior (e.g. what token is generated, whether the clock is frozen) between individual test cases.
+
+Controller tests use a real database and mock only the external boundaries:
 
 ```scala
 override def guiceApplicationBuilder(): GuiceApplicationBuilder =

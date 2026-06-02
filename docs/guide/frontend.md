@@ -1,6 +1,6 @@
 # Frontend guidelines
 
-Stack: Scala.js 1.x · Slinky 0.7 · React 17 · MUI 5 (ScalablyTyped) · Monix 3
+Stack: Scala.js 1.x · Slinky 0.7 · React 18 · MUI 5 (ScalablyTyped) · Monix 3
 
 ## Rules
 

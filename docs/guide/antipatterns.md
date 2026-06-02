@@ -98,13 +98,7 @@ if (user.isEmpty) throw NotFoundException("User not found")
 @file: server/src/main/scala/net/wiringbits/validations/ValidatePasswordMatches.scala  
 @file: server/src/main/scala/net/wiringbits/validations/ValidateUserToken.scala
 
-**AP-BE-02 — Admin endpoints lack role checks**
-
-`AdminController` identifies the calling user but does not verify they hold an admin role before serving admin data. Every admin action must verify the caller's role from the database before proceeding.
-
-@file: server/src/main/scala/controllers/AdminController.scala
-
-**AP-BE-03 — Raw `getString` in ConfigLoader instead of typed wrappers**
+**AP-BE-02 — Raw `getString` in ConfigLoader instead of typed wrappers**
 
 Some model-level config loaders call `config.getString(path)` directly, bypassing the typed wrapper pattern used by `SwaggerConfig` and `AWSConfig`. This skips compile-time safety.
 

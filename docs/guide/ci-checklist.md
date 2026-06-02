@@ -4,8 +4,9 @@
 
 ```bash
 # 1. Format — CI will reject unformatted code
-sbt scalafmtAll
-git add -u   # stage any files scalafmt rewrote
+sbt scalafmtSbt   # formats build.sbt and project/*.sbt
+sbt scalafmtAll   # formats all src/**/*.scala
+git add -u        # stage any files scalafmt rewrote
 
 # 2. Compile — catch errors and -Werror warnings
 CI=true sbt compile
@@ -36,7 +37,7 @@ A Scala warning (unused import, deprecated syntax, etc.) is promoted to an error
 Use `import scala.compiletime.uninitialized` and `var x: T = uninitialized` instead of `var x: T = _`. See [testing.md](testing.md) §Exceptions.
 
 **scalafmt diff**  
-Run `sbt scalafmtAll` and commit the reformatted files. If your editor auto-formats on save, make sure it uses the same scalafmt version pinned in `project/plugins.sbt`.
+Run `sbt scalafmtSbt && sbt scalafmtAll` and stage the reformatted files. If your editor auto-formats on save, make sure it uses the same scalafmt version pinned in `project/plugins.sbt`.
 
 **testcontainers timeout**  
 Docker must be running before `sbt test`. PostgreSQL 13 is pulled on first run; subsequent runs use the cached image.
