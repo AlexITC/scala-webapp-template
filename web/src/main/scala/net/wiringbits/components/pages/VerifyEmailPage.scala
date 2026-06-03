@@ -57,7 +57,7 @@ object VerifyEmailPage {
                   )
                   .asInstanceOf[CSSPropertiesUtils]
               )(
-                mui.Icon(muiIcons.MailOutlined()).sx(js.Dynamic.literal(fontSize = 40).asInstanceOf[CSSPropertiesUtils])
+                muiIcons.MailOutlined().sx(js.Dynamic.literal(fontSize = 40).asInstanceOf[CSSPropertiesUtils])
               ),
             mui
               .Typography(texts.verifyYourEmailAddress)
@@ -78,7 +78,7 @@ object VerifyEmailPage {
               .normal()(texts.resendEmail)
               .variant("contained")
               .size("large")
-              .startIcon(mui.Icon(muiIcons.Refresh()))
+              .startIcon(muiIcons.Refresh())
               .onClick(_ => history.push(s"/resend-verify-email?email=$emailParam"))
           )
       )

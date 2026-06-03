@@ -69,7 +69,7 @@ object LogList {
             mui.Button
               .normal()(texts.reload)
               .size("small")
-              .startIcon(mui.Icon(muiIcons.Refresh()))
+              .startIcon(muiIcons.Refresh())
               .onClick(_ => props.forceRefresh())
           ),
         // log rows
@@ -107,7 +107,7 @@ object LogList {
                       )
                       .asInstanceOf[CSSPropertiesUtils]
                   )(
-                    mui.Icon(muiIcons.History()).sx(js.Dynamic.literal(fontSize = 20).asInstanceOf[CSSPropertiesUtils])
+                    muiIcons.History().sx(js.Dynamic.literal(fontSize = 20).asInstanceOf[CSSPropertiesUtils])
                   ),
                 mui
                   .Box()

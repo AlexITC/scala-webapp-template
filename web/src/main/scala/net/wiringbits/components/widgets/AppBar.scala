@@ -204,7 +204,7 @@ object AppBar {
     val authBtns: ReactElement = auth match {
       case AuthState.Authenticated(_) =>
         mui.Button
-          .normal()(mui.Icon(muiIcons.Logout()), " ", texts.signOut)
+          .normal()(muiIcons.Logout(), " ", texts.signOut)
           .sx(signOutBtnSx.asInstanceOf[CSSPropertiesUtils])
           .size("small")
           .onClick(_ => history.push("/signout"))
@@ -248,35 +248,35 @@ object AppBar {
             .normal()
             .sx(mobileMenuItemSx.asInstanceOf[CSSPropertiesUtils])
             .onClick(_ => { setDrawerOpen(false); history.push("/") })(
-              mui.Icon(muiIcons.Home()),
+              muiIcons.Home(),
               texts.home
             ),
           mui.MenuItem
             .normal()
             .sx(mobileMenuItemSx.asInstanceOf[CSSPropertiesUtils])
             .onClick(_ => { setDrawerOpen(false); history.push("/dashboard") })(
-              mui.Icon(muiIcons.Dashboard()),
+              muiIcons.Dashboard(),
               texts.dashboard
             ),
           mui.MenuItem
             .normal()
             .sx(mobileMenuItemSx.asInstanceOf[CSSPropertiesUtils])
             .onClick(_ => { setDrawerOpen(false); history.push("/about") })(
-              mui.Icon(muiIcons.Info()),
+              muiIcons.Info(),
               texts.about
             ),
           mui.MenuItem
             .normal()
             .sx(mobileMenuItemSx.asInstanceOf[CSSPropertiesUtils])
             .onClick(_ => { setDrawerOpen(false); history.push("/me") })(
-              mui.Icon(muiIcons.Person()),
+              muiIcons.Person(),
               texts.profile
             ),
           mui.MenuItem
             .normal()
             .sx(mobileMenuItemSx.asInstanceOf[CSSPropertiesUtils])
             .onClick(_ => { setDrawerOpen(false); history.push("/signout") })(
-              mui.Icon(muiIcons.Logout()),
+              muiIcons.Logout(),
               texts.signOut
             )
         )
@@ -286,28 +286,28 @@ object AppBar {
             .normal()
             .sx(mobileMenuItemSx.asInstanceOf[CSSPropertiesUtils])
             .onClick(_ => { setDrawerOpen(false); history.push("/") })(
-              mui.Icon(muiIcons.Home()),
+              muiIcons.Home(),
               texts.home
             ),
           mui.MenuItem
             .normal()
             .sx(mobileMenuItemSx.asInstanceOf[CSSPropertiesUtils])
             .onClick(_ => { setDrawerOpen(false); history.push("/about") })(
-              mui.Icon(muiIcons.Info()),
+              muiIcons.Info(),
               texts.about
             ),
           mui.MenuItem
             .normal()
             .sx(mobileMenuItemSx.asInstanceOf[CSSPropertiesUtils])
             .onClick(_ => { setDrawerOpen(false); history.push("/signup") })(
-              mui.Icon(muiIcons.PersonAdd()),
+              muiIcons.PersonAdd(),
               texts.signUp
             ),
           mui.MenuItem
             .normal()
             .sx(mobileMenuItemSx.asInstanceOf[CSSPropertiesUtils])
             .onClick(_ => { setDrawerOpen(false); history.push("/signin") })(
-              mui.Icon(muiIcons.Login()),
+              muiIcons.Login(),
               texts.signIn
             )
         )
@@ -324,7 +324,7 @@ object AppBar {
       .anchor("right")
 
     val darkToggle = mui.IconButton
-      .normal()(mui.Icon(if (isDark) muiIcons.Brightness7() else muiIcons.Brightness4()))
+      .normal()(if (isDark) muiIcons.Brightness7() else muiIcons.Brightness4())
       .sx(menuIconSx)
       .size("small")
       .onClick(_ => props.ctx.$darkMode := !isDark)
@@ -342,7 +342,7 @@ object AppBar {
                 Fragment(
                   darkToggle,
                   mui.IconButton
-                    .normal()(mui.Icon(muiIcons.Menu()))
+                    .normal()(muiIcons.Menu())
                     .sx(menuIconSx)
                     .onClick(_ => setDrawerOpen(true)),
                   mobileDrawer

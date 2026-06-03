@@ -127,8 +127,8 @@ object HomePage {
           )
           .asInstanceOf[CSSPropertiesUtils]
       )(
-        mui
-          .Icon(muiIcons.AutoAwesome())
+        muiIcons
+          .AutoAwesome()
           .sx(js.Dynamic.literal(fontSize = 15).asInstanceOf[CSSPropertiesUtils]),
         "AI-first full-stack Scala template"
       )
@@ -216,7 +216,7 @@ object HomePage {
           .normal()(if (isAuthed) "Go to dashboard" else "Get started")
           .variant("contained")
           .size("large")
-          .endIcon(mui.Icon(muiIcons.ArrowForward()))
+          .endIcon(muiIcons.ArrowForward())
           .onClick(_ => history.push(if (isAuthed) "/dashboard" else "/signup")),
         a(
           slinky.web.html.href := "https://github.com/wiringbits/scala-webapp-template",
@@ -230,7 +230,7 @@ object HomePage {
             .size("large")
             .color("inherit")
             .sx(js.Dynamic.literal(color = "text.primary", borderColor = "divider").asInstanceOf[CSSPropertiesUtils])
-            .startIcon(mui.Icon(muiIcons.GitHub()))
+            .startIcon(muiIcons.GitHub())
         )
       )
 
@@ -337,8 +337,8 @@ object HomePage {
                       )
                       .asInstanceOf[CSSPropertiesUtils]
                   )(
-                    mui
-                      .Icon(muiIcons.AutoAwesome())
+                    muiIcons
+                      .AutoAwesome()
                       .sx(js.Dynamic.literal(fontSize = 14).asInstanceOf[CSSPropertiesUtils]),
                     "AI-friendly by design"
                   ),
@@ -420,7 +420,7 @@ object HomePage {
                                 )
                                 .asInstanceOf[CSSPropertiesUtils]
                             )(
-                              mui.Icon(icon).sx(js.Dynamic.literal(fontSize = 21).asInstanceOf[CSSPropertiesUtils])
+                              icon
                             ),
                           mui.Box()(
                             mui
@@ -500,8 +500,8 @@ object HomePage {
                     .asInstanceOf[CSSPropertiesUtils]
                 )
                 .withKey(i.toString)(
-                  mui
-                    .Icon(muiIcons.CheckCircle())
+                  muiIcons
+                    .CheckCircle()
                     .sx(
                       js.Dynamic
                         .literal(fontSize = 20, color = "primary.main", flexShrink = 0)
@@ -575,32 +575,32 @@ object HomePage {
           .asInstanceOf[CSSPropertiesUtils]
       )(
         featureCard(
-          mui.Icon(muiIcons.Person()).sx(js.Dynamic.literal(fontSize = 23).asInstanceOf[CSSPropertiesUtils]),
+          muiIcons.Person().sx(js.Dynamic.literal(fontSize = 23).asInstanceOf[CSSPropertiesUtils]),
           "User profile",
           "Everything you need to create accounts, change passwords and update profiles — already wired up and tested."
         ),
         featureCard(
-          mui.Icon(muiIcons.Email()).sx(js.Dynamic.literal(fontSize = 23).asInstanceOf[CSSPropertiesUtils]),
+          muiIcons.Email().sx(js.Dynamic.literal(fontSize = 23).asInstanceOf[CSSPropertiesUtils]),
           "Transactional emails",
           "Verification, password-reset and notification emails are templated and sent through a pluggable mailer."
         ),
         featureCard(
-          mui.Icon(muiIcons.Schedule()).sx(js.Dynamic.literal(fontSize = 23).asInstanceOf[CSSPropertiesUtils]),
+          muiIcons.Schedule().sx(js.Dynamic.literal(fontSize = 23).asInstanceOf[CSSPropertiesUtils]),
           "Background tasks",
           "Scheduled jobs and async background work run reliably outside the request cycle, ready to extend."
         ),
         featureCard(
-          mui.Icon(muiIcons.Hub()).sx(js.Dynamic.literal(fontSize = 23).asInstanceOf[CSSPropertiesUtils]),
+          muiIcons.Hub().sx(js.Dynamic.literal(fontSize = 23).asInstanceOf[CSSPropertiesUtils]),
           "Swagger integration",
           "The boilerplate to expose your application's API through Swagger ships in the box, ready to explore."
         ),
         featureCard(
-          mui.Icon(muiIcons.Refresh()).sx(js.Dynamic.literal(fontSize = 23).asInstanceOf[CSSPropertiesUtils]),
+          muiIcons.Refresh().sx(js.Dynamic.literal(fontSize = 23).asInstanceOf[CSSPropertiesUtils]),
           "Consistent data loading",
           "A single AsyncComponent handles loading, error and retry states the same way across every screen."
         ),
         featureCard(
-          mui.Icon(muiIcons.Security()).sx(js.Dynamic.literal(fontSize = 23).asInstanceOf[CSSPropertiesUtils]),
+          muiIcons.Security().sx(js.Dynamic.literal(fontSize = 23).asInstanceOf[CSSPropertiesUtils]),
           "Tests as first-class citizens",
           "GitHub Actions and a deep integration-test suite mean onboarding new developers takes little effort."
         )
@@ -644,7 +644,7 @@ object HomePage {
                 )
                 .asInstanceOf[CSSPropertiesUtils]
             )(
-              mui.Icon(icon).sx(js.Dynamic.literal(fontSize = 24).asInstanceOf[CSSPropertiesUtils])
+              icon
             ),
           mui
             .Typography(title)
@@ -671,7 +671,7 @@ object HomePage {
           )
           .asInstanceOf[CSSPropertiesUtils]
       )(
-        mui.Icon(muiIcons.Sync()).sx(js.Dynamic.literal(fontSize = 22).asInstanceOf[CSSPropertiesUtils])
+        muiIcons.Sync().sx(js.Dynamic.literal(fontSize = 22).asInstanceOf[CSSPropertiesUtils])
       )
 
     val fullStackSection = mui
@@ -821,8 +821,8 @@ object HomePage {
                         )
                         .asInstanceOf[CSSPropertiesUtils]
                     )(
-                      mui
-                        .Icon(muiIcons.CheckCircle())
+                      muiIcons
+                        .CheckCircle()
                         .sx(js.Dynamic.literal(fontSize = 18).asInstanceOf[CSSPropertiesUtils])
                     ),
                   mui
@@ -874,7 +874,7 @@ object HomePage {
                 color = "#0E1B17"
               )
               .asInstanceOf[CSSPropertiesUtils]
-          )(mui.Icon(muiIcons.Hub()).sx(js.Dynamic.literal(fontSize = 14).asInstanceOf[CSSPropertiesUtils])),
+          )(muiIcons.Hub().sx(js.Dynamic.literal(fontSize = 14).asInstanceOf[CSSPropertiesUtils])),
         mui
           .Typography("Swagger")
           .sx(
@@ -1089,8 +1089,8 @@ object HomePage {
               )
               .asInstanceOf[CSSPropertiesUtils]
           )(
-            mui
-              .Icon(muiIcons.Code())
+            muiIcons
+              .Code()
               .sx(js.Dynamic.literal(color = "text.secondary", fontSize = 19).asInstanceOf[CSSPropertiesUtils]),
             mui
               .Typography("AsyncComponent.scala")
@@ -1164,8 +1164,8 @@ object HomePage {
                   .literal(display = "flex", alignItems = "center", gap = "12px", marginTop = "16px")
                   .asInstanceOf[CSSPropertiesUtils]
               )(
-                mui
-                  .Icon(muiIcons.Warning())
+                muiIcons
+                  .Warning()
                   .sx(js.Dynamic.literal(fontSize = 34, color = "error.main").asInstanceOf[CSSPropertiesUtils]),
                 mui
                   .Box()
@@ -1252,7 +1252,7 @@ object HomePage {
                       )
                       .asInstanceOf[CSSPropertiesUtils]
                   )(
-                    mui.Icon(muiIcons.Security()).sx(js.Dynamic.literal(fontSize = 23).asInstanceOf[CSSPropertiesUtils])
+                    muiIcons.Security().sx(js.Dynamic.literal(fontSize = 23).asInstanceOf[CSSPropertiesUtils])
                   ),
                 mui
                   .Typography("Tests are first-class citizens")
@@ -1288,8 +1288,8 @@ object HomePage {
                       .literal(display = "flex", alignItems = "center", gap = "8px", marginBottom = "16px")
                       .asInstanceOf[CSSPropertiesUtils]
                   )(
-                    mui
-                      .Icon(muiIcons.GitHub())
+                    muiIcons
+                      .GitHub()
                       .sx(js.Dynamic.literal(fontSize = 19, color = "text.secondary").asInstanceOf[CSSPropertiesUtils]),
                     mui
                       .Typography("CI / GitHub Actions")
@@ -1327,8 +1327,8 @@ object HomePage {
                             .asInstanceOf[CSSPropertiesUtils]
                         )
                         .withKey(i.toString)(
-                          mui
-                            .Icon(muiIcons.CheckCircle())
+                          muiIcons
+                            .CheckCircle()
                             .sx(
                               js.Dynamic.literal(fontSize = 19, color = "primary.main").asInstanceOf[CSSPropertiesUtils]
                             ),
