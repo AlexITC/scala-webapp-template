@@ -70,7 +70,29 @@ js.Dynamic.literal(
 )
 ```
 
-**AP-FE-05 — Duplicated form submission boilerplate**
+**AP-FE-05 — Wrapping SVG icons in `mui.Icon`**
+
+`mui.Icon` is a font-icon wrapper — it renders a `<span class="MuiIcon-root">` with `overflow: hidden` sized to `1em`. Nesting a `muiIcons.*` SVG icon component inside it clips the SVG.
+
+```scala
+// BEFORE (clips the icon)
+mui.Icon(muiIcons.CheckCircle()).sx(js.Dynamic.literal(fontSize = 20).asInstanceOf[CSSPropertiesUtils])
+
+// AFTER — use the icon component directly
+muiIcons.CheckCircle().sx(js.Dynamic.literal(fontSize = 20).asInstanceOf[CSSPropertiesUtils])
+```
+
+The same applies to button props: use the icon component directly, not wrapped.
+
+```scala
+// BEFORE
+button.endIcon(mui.Icon(muiIcons.ArrowForward()))
+
+// AFTER
+button.endIcon(muiIcons.ArrowForward())
+```
+
+**AP-FE-06 — Duplicated form submission boilerplate**
 
 All forms repeat the same ~25-line submit handler: check `isSubmitButtonEnabled` → `setFormData(_.submit)` → API call → `onComplete`. This is not yet abstracted. When adding a new form, copy the pattern exactly; do not invent a different structure. Track the abstraction as future work.
 
